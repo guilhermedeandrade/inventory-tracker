@@ -4,7 +4,7 @@ This is an inventory tracker application built with Rails. I was requested to bu
 
 To build the application I will use some gems that were requested:
 
-* Paranoid: to delete and object without actually deleting it from the db
+* Paranoid: to delete an object without actually deleting it from the db
 * Devise: login/authentication system
 * Paperclip: to upload a product image
 * Bower: to implement AngularJS
