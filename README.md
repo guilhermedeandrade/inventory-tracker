@@ -1,7 +1,5 @@
 # Inventory Tracker
 
-___
-
 ## Description
 
 This is an inventory tracker application built with Rails. I was requested to build an application where the user would be able to create categories and store some items using them. One category may have multiple items related to it, an item, however, must belong to a single category. The database was not specified and I decided to use PostgreSQL.
