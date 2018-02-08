@@ -11,6 +11,8 @@ To build the application I will use some gems that were requested:
 * Paperclip: to upload a product image
 * Bower: to implement AngularJS
 
+*Deadline: 20/02/2018*
+
 ## About
 
 The Rails version used was the 5.1.4 along with Ruby 2.5.0

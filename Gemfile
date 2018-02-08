@@ -30,6 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Those are the requested gems
+gem "paranoia", "~> 2.2"
+gem "paperclip", "~> 5.2.1"
+gem "bower-rails", "~> 0.11.0"
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
