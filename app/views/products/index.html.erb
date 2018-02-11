@@ -13,15 +13,22 @@
   </thead>
 
   <tbody>
+    <% f = 0 %>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= image_tag product.image.url(:thumb) %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if product.user_id == current_user.id %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= image_tag product.image.url(:thumb) %></td>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% f += 1 %>
+      <% end %>
+    <% end %>
+    <% if f == 0 %>
+        <p>You haven't created products yet</p>
     <% end %>
   </tbody>
 </table>
