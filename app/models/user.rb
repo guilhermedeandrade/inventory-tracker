@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_paranoid
   has_many :categories
+  has_many :products
   before_save { self.email = email.downcase }
   # validates :username, presence: true, uniqueness: { case_sensitive: false },
   # length: { minimum: 3, maximum: 25 }

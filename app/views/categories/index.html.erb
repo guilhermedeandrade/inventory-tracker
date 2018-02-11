@@ -11,13 +11,20 @@
   </thead>
 
   <tbody>
+    <% f = 0 %>
     <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if category.user_id == current_user.id %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= link_to 'Show', category %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% f += 1 %>
+      <% end %>
+    <% end %>
+    <% if f == 0 %>
+        <p>You haven't created categories yet</p>
     <% end %>
   </tbody>
 </table>
