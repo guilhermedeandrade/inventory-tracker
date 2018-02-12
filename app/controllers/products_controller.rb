@@ -15,21 +15,21 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
-    @categories = Category.all
+    @product = Product.new 
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # POST /products
   # POST /products.json
   def create
-    @categories = Category.all
     @product = Product.new(product_params)
     @product.user = current_user
-    @product.category = Category.find(:id)
+    @product.category_id = params[:category_id] 
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -44,6 +44,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product.category_id = params[:category_id]
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -73,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image, :category)
+      params.require(:product).permit(:name, :description, :image)
     end
 end
