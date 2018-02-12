@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>My account</h1>
 
 <table>
   <thead>
@@ -12,16 +12,18 @@
 
   <tbody>
     <% @users.each do |user| %>
+      <% if user.id == current_user.id %>
       <tr>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_registration_path %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New User', new_user_session_path %>
+<%= link_to 'Back', root_path %>
