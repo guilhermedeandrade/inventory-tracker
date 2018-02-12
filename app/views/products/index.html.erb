@@ -14,22 +14,20 @@
   </thead>
 
   <tbody>
-    <% f = 0 %>
     <% @products.each do |product| %>
       <% if product.user_id == current_user.id %>
         <tr>
           <td><%= product.name %></td>
           <td><%= product.description %></td>
-          <td><%= link_to Category.find(product.category_id).name, category_path(product.category_id) %></td>
+          <td><%= link_to product.category.name, category_path(product.category) %></td>
           <td><%= image_tag product.image.url(:thumb) %></td>
           <td><%= link_to 'Show', product %></td>
           <td><%= link_to 'Edit', edit_product_path(product) %></td>
           <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-        <% f += 1 %>
       <% end %>
     <% end %>
-    <% if f == 0 %>
+    <% if not current_user.products.any? %>
         <p>You haven't created products yet</p>
     <% end %>
   </tbody>
