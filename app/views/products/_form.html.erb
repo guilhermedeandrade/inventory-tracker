@@ -25,6 +25,20 @@
      <%= form.file_field :image %>
   </div>
 
+  <div>
+  <label>Category:
+  <input list="categories" name="myCategory" /></label>
+  <datalist id="categories">
+    <% @categories.each do |category| %>
+      <% if category.user_id == current_user.id %>
+        <option value="<%= category.name %>">
+      <% end %>
+    <% end %>
+  </datalist>
+  </div>
+
+  <br>
+
   <div class="actions">
     <%= form.submit %>
   </div>
