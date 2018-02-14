@@ -1,8 +1,13 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h3> Products under this category </h3>
+
 <% Product.where(category_id: @category.id).each do |product| %>
-<li> <%= product.name %> </li>
+  <li> <%= product.name %> </li>
+<% end %>
+
+<% if not @category.products.any? %>
+  <p>This category does not have associated products</p>
 <% end %>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
