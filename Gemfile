@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+#gems required to make bootstrap works
+gem 'jquery-rails'
+gem 'sass', '3.2.19'
 # Those are the requested gems
 gem "paranoia", "~> 2.2"
 gem "paperclip", "~> 5.2.1"
