@@ -1,2 +1,3 @@
-inventory-tracker = angular.module('inventory-tracker',[
+inventoryTracker = angular.module('inventoryTracker',[
+  
 ])
