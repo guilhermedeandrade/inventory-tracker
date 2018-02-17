@@ -22,14 +22,14 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-#gems required to make bootstrap works
+# gems required to make bootstrap works
 gem 'jquery-rails'
 gem 'sass', '3.2.19'
 # Those are the requested gems
@@ -37,11 +37,16 @@ gem "paranoia", "~> 2.2"
 gem "paperclip", "~> 5.2.1"
 gem "bower-rails", "~> 0.11.0"
 gem 'devise'
+## for testing
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem "rspec-rails", "~> 2.0"
+  gem 'factory_bot'
+  gem "database_cleaner"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
