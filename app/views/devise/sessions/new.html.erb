@@ -1,6 +1,18 @@
-<h2>Log in</h2>
+<style>
+  .jumbotron {
+    width: 400px;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url('https://images.unsplash.com/photo-1470173274384-c4e8e2f9ea4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f8bf185da8d21fad65f2636d6021ba7&auto=format&fit=crop&w=1050&q=80') no-repeat center center;
+  }
+</style>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="jumbotron">
+  <h2>Log in</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,6 +33,7 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
 
-<%= render "devise/shared/links" %>
