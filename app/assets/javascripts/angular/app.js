@@ -13,7 +13,7 @@ angular.module("inventoryTracker").controller("usersList", function ($scope, $ht
     url: 'http://localhost:3000/users.json'
   }).then(function successCallback(response) {
       console.log("test-success");
-      $scope.users = response.data;
+      $scope.users = response.data; // this is gonna access all the data from the JSON
       $scope.firstUser = response.data[0].email; // this is gonna access the email of the first user
     }, function errorCallback(response) {
       console.log("test-error");
