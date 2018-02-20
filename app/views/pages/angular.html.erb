@@ -11,6 +11,10 @@
       </form>
     </div>
   </div>
-  <h1>{{app}}</h1>
-  <p>{{users}}<p>
+  <div ng-controller="usersList">
+    <h1>{{app}}</h1>
+    <p>The $http.get request is working and this is the data from the JSON file: </p>
+    <p>{{users}}</p>
+    <p>This is the first user: {{firstUser}}</p>
+  </div>
 </div>
