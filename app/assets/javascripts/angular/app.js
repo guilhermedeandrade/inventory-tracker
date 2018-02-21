@@ -37,7 +37,7 @@ angular.module("inventoryTracker").controller("productsList", ["$scope", "$http"
 
   $http({
     method: 'GET',
-    url: 'https://inventory-tracker-andrade.herokuapp.com/sproducts.json'
+    url: 'https://inventory-tracker-andrade.herokuapp.com/products.json'
   }).then(function successCallback(response) {
     $scope.products = response.data;
   }, function errorCallback(response) {
