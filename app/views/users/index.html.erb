@@ -2,7 +2,7 @@
 
 <h1>My account</h1>
 
-<table>
+<table class="table" style="width: 300px">
   <thead>
     <tr>
       <th>Email</th>
@@ -25,20 +25,5 @@
 </table>
 
 <br>
-
-<h2>Testando o index com ng-repeat e ng-if</h2>
-
-<div ng-controller="usersList">
-  <ul>
-    <li ng-repeat="user in users">{{user.email}}</li>
-  </ul>
-
-  <table>
-    <th>Email</th>
-    <tr ng-repeat="user in users">
-        <td>{{user.email}}</td>
-    </tr>
-  </table>
-</div>
 
 <%= link_to 'Back', root_path %>

@@ -1,5 +1,10 @@
-<div class="container-fluid" ng-controller="usersList">
-  <h1>{{app}}</h1>
+<style>
+  .list {
+    width: 200px;
+  }
+</style>
+<div class="container-fluid">
+  <h1>Testing stuff related to AngularJS</h1>
   <div class="panel panel-success">
     <div class="panel-heading">
       <h1 ng-if="name">Hello, {{name}}</h1>
@@ -12,13 +17,22 @@
       </form>
     </div>
   </div>
-  <div>
-    <p>The $http.get request is working and this is the data from the JSON file: </p>
-    <p>{{users}}</p>
-    <p>This is the first user: {{firstUser}}</p>
-    <p>List of users using ng-repeat</p>
-    <ul>
-      <li ng-repeat="user in users">{{user.email}}</li>
+  <div ng-controller="usersList">
+    <h2>List of users using ng-repeat:</h2>
+    <ul class="list-group, list">
+      <li class="list-group-item" ng-repeat="user in users">{{user.email}}</li>
     </ul>
   </div>
+  <div ng-controller="categoriesList">
+    <h2>List of categories using ng-repeat:</h2>
+    <ul class="list-group, list">
+      <li class="list-group-item" ng-repeat="category in categories">{{category.name}}</li>
+    </ul>
+  </div>
+  <div ng-controller="productsList">
+  <h2>List of products using ng-repeat:</h2>
+    <ul class="list-group, list">
+      <li class="list-group-item" ng-repeat="product in products">{{product.name}}</li>
+    </ul>
+  </div>  
 </div>

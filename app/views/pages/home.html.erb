@@ -1,11 +1,27 @@
-<h1>Inventory Tracker</h1>
+<style>
+    .jumbotron {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+
+<div class="jumbotron">    
+    <h1>Inventory Tracker</h1>
+    <% if current_user %>
+        <button class="btn" style="margin-bottom: 10px"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
+        <br>
+        <%= link_to 'Account', users_path %> |
+        <%= link_to 'Categories', categories_path %> |
+        <%= link_to 'Products', products_path %>
+    <% else %>
+        <button class="btn" style="margin-bottom: 10px"><%= link_to 'Login', new_user_session_path %></button>
+    <% end %>
+</div>
 
 <% if current_user %>
-    <button><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
-    <br/>
-    <%= link_to 'Account', users_path %> |
-    <%= link_to 'Categories', categories_path %> |
-    <%= link_to 'Products', products_path %>
-<% else %>
-    <button><%= link_to 'Login', new_user_session_path %></button>
+    <div style="text-align: center">
+        <p><em>Os requests por API utilizando o AngularJS podem ser verificados aqui: <%= link_to 'AngularJS', pages_angular_path %></p><em>
+    </div>
 <% end %>
