@@ -4,17 +4,25 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        font-weight: bold;
+        color: white;
+        background: url('https://images.unsplash.com/photo-1476778642660-a2c55571cf0d?ixlib=rb-0.3.5&s=b53b1e3792ab708ca03a6069fbb9fdd1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    }
+    .shadow {
+        text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                     0px 8px 13px rgba(0,0,0,0.1),
+                     0px 18px 23px rgba(0,0,0,0.1);
     }
 </style>
 
 <div class="jumbotron">    
-    <h1>Inventory Tracker</h1>
+    <h1 class="shadow">Inventory Tracker</h1>
     <% if current_user %>
         <button class="btn" style="margin-bottom: 10px"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
         <br>
-        <%= link_to 'Account', users_path %> |
-        <%= link_to 'Categories', categories_path %> |
-        <%= link_to 'Products', products_path %>
+        <button><%= link_to 'Account', users_path %></button>
+        <button><%= link_to 'Categories', categories_path %></button>
+        <button><%= link_to 'Products', products_path %></button>
     <% else %>
         <button class="btn" style="margin-bottom: 10px"><%= link_to 'Login', new_user_session_path %></button>
     <% end %>
