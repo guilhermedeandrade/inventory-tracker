@@ -24,7 +24,7 @@ angular.module("inventoryTracker").controller("categoriesList", ["$scope", "$htt
 
   $http({
     method: 'GET',
-    url: 'categories.json'
+    url: 'https://inventory-tracker-andrade.herokuapp.com/categories.json'
   }).then(function successCallback(response) {
     $scope.categories = response.data;
   }, function errorCallback(response) {
@@ -37,7 +37,7 @@ angular.module("inventoryTracker").controller("productsList", ["$scope", "$http"
 
   $http({
     method: 'GET',
-    url: 'products.json'
+    url: 'https://inventory-tracker-andrade.herokuapp.com/sproducts.json'
   }).then(function successCallback(response) {
     $scope.products = response.data;
   }, function errorCallback(response) {
