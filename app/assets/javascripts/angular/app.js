@@ -10,7 +10,7 @@ angular.module("inventoryTracker").controller("usersList", ["$scope", "$http", f
 
   $http({
     method: 'GET',
-    url: 'users.json' //usando localhost nao vai funcionar com heroku
+    url: 'https://inventory-tracker-andrade.herokuapp.com/users.json' //usando localhost nao vai funcionar com heroku
   }).then(function successCallback(response) {
       $scope.users = response.data; // this is gonna access all the data from the JSON
       $scope.firstUser = response.data[0].email; // this is gonna access the email of the first user
@@ -19,7 +19,7 @@ angular.module("inventoryTracker").controller("usersList", ["$scope", "$http", f
     });
 }]);
 
-angular.module("inventoryTracker").controller("categoriesList", function ($scope, $http) {
+angular.module("inventoryTracker").controller("categoriesList", ["$scope", "$http", function ($scope, $http) {
   $scope.categories = [];
 
   $http({
@@ -30,9 +30,9 @@ angular.module("inventoryTracker").controller("categoriesList", function ($scope
   }, function errorCallback(response) {
     console.log("getCategories");
   });
-});
+}]);
 
-angular.module("inventoryTracker").controller("productsList", function ($scope, $http) {
+angular.module("inventoryTracker").controller("productsList", ["$scope", "$http", function ($scope, $http) {
   $scope.products = [];
 
   $http({
@@ -43,4 +43,4 @@ angular.module("inventoryTracker").controller("productsList", function ($scope, 
   }, function errorCallback(response) {
     console.log("getProducts");
   });
-});
+}]);
